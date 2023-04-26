@@ -2,7 +2,6 @@ import {useState} from "react";
 
 const Form = (props: any) => {
     const [userAnswer, setUserAnswer] = useState('');
-    const [invalid, setInvalid] = useState(false)
 
     const handleSubmit = (e: any) => {
         if (userAnswer !== props.answer)
