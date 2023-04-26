@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import './App.css';
 import Question from "./components/Question";
+import Choices from "./components/Choices";
 
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
     return (
         <div className="d-flex flex-wrap flex-column align-items-center mt-3 p-2">
             <Question question={question} />
-            <p>{correctAnswer}</p>
-            <p>{incorrectAnswers.length > 1 && incorrectAnswers}</p>
+            {incorrectAnswers.length > 1 && <Choices answers={[...incorrectAnswers, correctAnswer]}/>}
+
         </div>
     );
 }
