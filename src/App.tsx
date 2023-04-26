@@ -3,6 +3,7 @@ import axios from "axios";
 import './App.css';
 import Question from "./components/Question";
 import Choices from "./components/Choices";
+import Form from "./components/Form";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <div className="d-flex flex-wrap flex-column align-items-center mt-3 p-2">
             <Question question={question} />
             {incorrectAnswers.length > 1 && <Choices answers={[...incorrectAnswers, correctAnswer]}/>}
-
+            <Form answer={correctAnswer} />
         </div>
     );
 }
